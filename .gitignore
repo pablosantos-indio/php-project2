@@ -1,4 +1,8 @@
 /src/node_modules
 /src/vendor/
 /src/logs/php_errors.log
-/src/twig_cache
+/src/twig_cache/*
+/src/public/uploads/*
+
+!/src/twig_cache/.gitkeep
+!/src/public/uploads/.gitkeep
