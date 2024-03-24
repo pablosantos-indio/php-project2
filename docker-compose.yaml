@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   web-server:
-    container_name: ws
+    container_name: project2
     build:
       dockerfile: php.Dockerfile
       context: .
