@@ -10,6 +10,7 @@ define('UPLOADS_PATH', APP_ROOT . '/public/' . UPLOADS_DIR . '/');
 
 use App\App;
 use App\Config;
+use App\Controllers\DataController;
 use App\Controllers\HomeController;
 use App\Controllers\TestController;
 
@@ -19,6 +20,9 @@ $app = new App();
 $app->addRoute('/', HomeController::class, 'index');
 // test connection to the database
 $app->addRoute('/test-db', TestController::class, 'testDbConnection');
+// button to take data from API to insert in DB
+$app->addRoute('/fetch-api-data', DataController::class, 'fetchApiData');
+
 
 
 // run app

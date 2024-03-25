@@ -16,7 +16,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 -- Create dbClassSchedule
-CREATE DATABASE IF NOT EXISTS job_board;
+CREATE DATABASE IF NOT EXISTS job_board DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE job_board;
 
 -- Dropping existing table for job postings
@@ -27,12 +27,12 @@ CREATE TABLE IF NOT EXISTS JobPostings (
     Id INT NOT NULL AUTO_INCREMENT,
     CreatedAt DATETIME NOT NULL,
     Title VARCHAR(255) NOT NULL,
-    Description TEXT NOT NULL,
+    Description MEDIUMTEXT NOT NULL,
     Location VARCHAR(255) NOT NULL,
     StartDate DATE NOT NULL,
     ContactEmail VARCHAR(255) NOT NULL,
     PRIMARY KEY (Id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Insert on table JobPostings
 INSERT INTO JobPostings (CreatedAt, Title, Description, Location, StartDate, ContactEmail) VALUES

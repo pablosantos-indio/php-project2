@@ -14,9 +14,9 @@ class TestController
         try {
             $dbConnection = new DBConnection();
             $conn = $dbConnection->getConnection();
-            echo "Conexão bem-sucedida!";
+            echo "The connection is successful!";
         } catch (PDOException $e) {
-            echo "Erro de conexão: " . $e->getMessage();
+            echo "The connection fails. Error:" . $e->getMessage();
         }
     }
 }
