@@ -11,11 +11,15 @@ define('UPLOADS_PATH', APP_ROOT . '/public/' . UPLOADS_DIR . '/');
 use App\App;
 use App\Config;
 use App\Controllers\HomeController;
+use App\Controllers\TestController;
 
 $app = new App();
 
 // add routes
 $app->addRoute('/', HomeController::class, 'index');
+// test connection to the database
+$app->addRoute('/test-db', TestController::class, 'testDbConnection');
+
 
 // run app
 $app->run();

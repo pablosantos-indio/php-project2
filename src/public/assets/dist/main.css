@@ -536,9 +536,6 @@ video {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.mb-4 {
-  margin-bottom: 1rem;
-}
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -547,6 +544,9 @@ video {
 }
 .mb-3 {
   margin-bottom: 0.75rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
 }
 .mb-6 {
   margin-bottom: 1.5rem;
@@ -599,10 +599,6 @@ video {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
-.text-green-500 {
-  --tw-text-opacity: 1;
-  color: rgb(34 197 94 / var(--tw-text-opacity));
-}
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -614,6 +610,10 @@ video {
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
 }
 .text-red-700 {
   --tw-text-opacity: 1;
