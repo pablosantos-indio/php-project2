@@ -32,7 +32,7 @@ class DataController extends Controller
             // Clear the table before inserting new data
             $dbConnection->exec("DELETE FROM JobPostings");
 
-            $stmt = $dbConnection->prepare("INSERT INTO JobPostings (CreatedAt, Title, Description, Location, StartDate, ContactEmail) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt = $dbConnection->prepare("INSERT INTO JobPostings (createdAt, title, description, location, startDate, contactEmail) VALUES (?, ?, ?, ?, ?, ?)");
 
             foreach ($data as $item) {
 

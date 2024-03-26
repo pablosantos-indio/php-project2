@@ -1,0 +1,14 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<div class="m-auto w-8/12 md:w-6/12">
+    {% include 'partials/page-message.twig' %}
+
+    <h1 class="text-3xl mb-4">Dashboard</h1>
+
+    <form action="/fetch-api-data" method="get">
+        <button type="submit">Fetch API Data</button>
+    </form>
+
+</div>
+{% endblock %}

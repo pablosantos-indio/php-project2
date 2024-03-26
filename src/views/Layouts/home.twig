@@ -4,11 +4,18 @@
 <div class="m-auto w-8/12 md:w-6/12">
     {% include 'partials/page-message.twig' %}
 
-    <h1 class="text-3xl mb-4">Home</h1>
+    <h1 class="text-3xl mb-4">Jobs</h1>
 
-    <form action="/fetch-api-data" method="get">
-        <button type="submit">Fetch API Data</button>
-    </form>
+    {% for jobPosting in jobPostings %}
+        {{ jobPosting.title }}
+        <br>
+        Location: {{ jobPosting.location }}
+        <br>
+        Start Date: {{ jobPosting.startDate | date('F d, Y') }}
+        <br>
+        {{ jobPosting.shortDescription }}
+        <hr>
+    {% endfor %}
 
 </div>
 {% endblock %}

@@ -24,19 +24,19 @@ DROP TABLE IF EXISTS JobPostings;
 
 -- Creating table for Job Postings
 CREATE TABLE IF NOT EXISTS JobPostings (
-    Id INT NOT NULL AUTO_INCREMENT,
-    CreatedAt DATETIME NOT NULL,
-    Title VARCHAR(255) NOT NULL,
-    Description MEDIUMTEXT NOT NULL,
-    Location VARCHAR(255) NOT NULL,
-    StartDate DATE NOT NULL,
-    ContactEmail VARCHAR(255) NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
+    createdAt DATETIME NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description MEDIUMTEXT NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    startDate DATE NOT NULL,
+    contactEmail VARCHAR(255) NOT NULL,
     PRIMARY KEY (Id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Insert on table JobPostings
-INSERT INTO JobPostings (CreatedAt, Title, Description, Location, StartDate, ContactEmail) VALUES
-('2024-02-16 14:31:19', 'Howe-Simonis', 'Description for Howe-Simonis. An innovative solution in the tech landscape, focusing on advanced analytics and data processing.', 'Port Vincenzomouth', '2024-02-23', 'chaim17@yahoo.com'),
+INSERT INTO JobPostings (createdAt, title, description, location, startDate, contactEmail) VALUES
+('2024-02-16 14:31:19', 'Howe-Simonis', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Port Vincenzomouth', '2024-02-23', 'chaim17@yahoo.com'),
 ('2024-02-16 14:31:19', 'Dach, Jacobson and Gibson', 'Dach, Jacobson and Gibson brings forward a new era of digital marketing strategies tailored for the modern consumer.', 'Lake Edhaven', '2024-02-27', 'akautzer@hamill.com'),
 ('2024-02-16 14:31:19', 'Cronin Group', 'Cronin Group specializes in logistical solutions that streamline supply chain processes for enterprises around the globe.', 'New Selinaton', '2024-03-26', 'larson.annabel@yahoo.com'),
 ('2024-02-16 14:31:19', 'Schinner-Hane', 'At Schinner-Hane, we redefine the boundaries of web development with our cutting-edge technologies and innovative practices.', 'Lake Devonhaven', '2024-03-23', 'mayert.stanford@quitzon.com'),

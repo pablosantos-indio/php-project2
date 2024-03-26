@@ -40,6 +40,7 @@ class Controller
             $data,
             [
                 'controller' => $this,
+                'session' => $_SESSION,
             ]
         );
 
