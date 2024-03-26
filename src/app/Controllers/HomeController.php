@@ -4,26 +4,27 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use App\DB\DBConnection;
 use App\Models\JobPostings;
-use PDO;
 
 class HomeController extends Controller
 {
 
     public function index(): void
     {
-        //Connect to database
-        $db = (new DBConnection())->getConnection();
-        $jobPostings = [];
+        $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 
-        //Select all data from tabel JobPostings
-        $stmt = $db->query('SELECT * FROM JobPostings');
-        $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, JobPostings::class);
+        // Find all JobPostings with pagination
+        $paginationData = JobPostings::findAll($page);
 
-        $jobPostings = $stmt->fetchAll();
+        // Check if the requested page exceeds the total number of pages
+        if ($page > $paginationData['total_pages']) {
+            // Redirect to the last page
+            header('Location: /?page=' . $paginationData['total_pages']);
+            exit;
+        }
 
-        // require VIEWS_PATH . 'home.php';
-        $this->render('home.twig', ['jobPostings' => $jobPostings]);
+        // Render the template with pagination data
+        $this->render('home.twig', ['paginationData' => $paginationData]);
     }
+
 }

@@ -13,6 +13,7 @@ use App\Config;
 use App\Controllers\DashboardController;
 use App\Controllers\DataController;
 use App\Controllers\HomeController;
+use App\Controllers\JobsController;
 use App\Controllers\TestController;
 
 $app = new App();
@@ -25,6 +26,8 @@ $app->addRoute('/test-db', TestController::class, 'testDbConnection');
 $app->addRoute('/fetch-api-data', DataController::class, 'fetchApiData');
 // to access the dashboard page
 $app->addRoute('/dashboard', DashboardController::class, 'index');
+$app->addRoute('/jobs/{id}', JobsController::class, 'index');
+$app->addRoute('/apply', JobsController::class, 'apply');
 
 
 

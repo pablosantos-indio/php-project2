@@ -6,16 +6,34 @@
 
     <h1 class="text-3xl mb-4">Jobs</h1>
 
-    {% for jobPosting in jobPostings %}
-        {{ jobPosting.title }}
-        <br>
-        Location: {{ jobPosting.location }}
-        <br>
-        Start Date: {{ jobPosting.startDate | date('F d, Y') }}
-        <br>
-        {{ jobPosting.shortDescription }}
-        <hr>
-    {% endfor %}
-
+    {% if paginationData.jobPostings is empty %}
+        <p>No jobs available at the moment.</p>
+    {% else %}
+        {% for jobPosting in paginationData.jobPostings %}
+            <div class="flex justify-between">
+                <div>
+                    <p class="mb-2">{{ jobPosting.title }}</p>
+                    <p class="mb-2">Location: {{ jobPosting.location }}</p>
+                    <p class="mb-2">Start Date: {{ jobPosting.startDate | date('F d, Y') }}</p>
+                    <p>{{ jobPosting.shortDescription }}</p>
+                </div>
+                <div class="ml-auto">
+                    <a href="/jobs/{{jobPosting.id}}" class="text-white px-4 py-2 rounded-md bg-blue-700 hover:bg-blue-600">View</a>
+                </div>
+            </div>
+            <hr class="my-4">
+        {% endfor %}
+        <div class="mt-4 flex justify-between items-center">
+            <a href="?page={{ paginationData.current_page - 1 }}"
+               class="py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded {% if paginationData.previous_disabled %}pointer-events-none opacity-50{% endif %}">
+               Previous
+            </a>
+            <span class="text-gray-700">Page {{ paginationData.current_page }} of {{ paginationData.total_pages }}</span>
+            <a href="?page={{ paginationData.current_page + 1 }}"
+               class="py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded {% if paginationData.next_disabled %}pointer-events-none opacity-50{% endif %}">
+               Next
+            </a>
+        </div>
+    {% endif %}
 </div>
 {% endblock %}
