@@ -4,13 +4,16 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use PDO;
-
 class DashboardController extends Controller
 {
 
     public function index(): void
     {
-        $this->render('dashboard.twig');
+        if (!isset($_SESSION['user'])) {
+            header('Location: /login');
+            exit;
+        }
+
+        $this->render('admin.twig');
     }
 }

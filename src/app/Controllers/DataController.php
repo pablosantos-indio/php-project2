@@ -50,8 +50,9 @@ class DataController extends Controller
                 ]);
             }
 
-            // Redirect or inform the user of success
-            echo "Data fetched and inserted successfully!";
+            $_SESSION['message'] = 'jobs successfully fetched from API';
+
+            header('Location: /');
         } catch (PDOException $e) {
             echo "Database error: " . $e->getMessage();
         }
